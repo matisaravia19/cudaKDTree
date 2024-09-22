@@ -189,9 +189,11 @@ namespace cukd {
       distance metric */
 
   template<typename T> inline __both__ float as_float_rz(T t);
+#ifdef __CUDA_ARCH__
+template<> inline __device__ float as_float_rz(int i) { return __int2float_rz(i); }
+#else
   template<> inline __both__ float as_float_rz(float f) { return f; }
-  template<> inline __device__ float as_float_rz(int i) { return __int2float_rz(i); }
-  
+#endif
   /*! @] */
 
   

@@ -31,3 +31,4 @@ Session.vim
 !*png/*.pdf
 .vs/
 
+/cmake-build-debug-visual-studio/
